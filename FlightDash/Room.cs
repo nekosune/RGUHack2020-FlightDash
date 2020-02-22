@@ -18,7 +18,9 @@ namespace FlightDash
         /// <summary>
         /// The room Description
         /// </summary>
-        public string RoomDesc { get; set; }
+        public string ShortRoomDesc { get; set; }
+
+        public string LongRoomDesc { get; set; }
         
         public List<Exit> Exits { get; set; } = new List<Exit>();
 
