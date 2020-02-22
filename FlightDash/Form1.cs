@@ -17,7 +17,7 @@ namespace FlightDash
         {
             InitializeComponent();
             Game.InititalizeGame();
-            this.AcceptButton = button1;
+            this.AcceptButton = actionButton;
             StatusBar();
 
             richTextBox1.Text+= Game.GetRoomHeader();
@@ -37,7 +37,7 @@ namespace FlightDash
             toolStripStatusLabel3.Text = $"Money: {Game.Player?.Money ?? 0:C}";
 
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void actionButton_Click(object sender, EventArgs e)
         {
             listBox1.Items.Add(inputBox.Text);
             listBox1.SelectedIndex = listBox1.Items.Count-1;
@@ -47,6 +47,13 @@ namespace FlightDash
                 richTextBox1.Text += "> " + inputBox.Text+Environment.NewLine;
                 richTextBox1.Text += output;
                 inputBox.Text = "";
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            else
+            {
+                richTextBox1.Text += "> " + inputBox.Text + Environment.NewLine;
+                richTextBox1.Text += output;
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
             }

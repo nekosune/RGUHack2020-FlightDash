@@ -9,7 +9,7 @@ namespace FlightDash
     public class Player
     {
 
-        public int Money { get; set; }
+        public decimal Money { get; set; }
 
         public void Initialize()
         {

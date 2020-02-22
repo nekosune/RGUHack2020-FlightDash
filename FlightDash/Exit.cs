@@ -16,6 +16,8 @@ namespace FlightDash
         /// </summary>
         public string ExitName { get; set; }
 
+        public String[] ExitNames { get; set; }
+
         /// <summary>
         /// Destination room
         /// </summary>
@@ -24,6 +26,9 @@ namespace FlightDash
         /// Description to show of the exit
         /// </summary>
         public string ExitDesc { get; set; }
+
+        public string ExitText { get; set; }
+        public decimal ExitCost { get; set; }
 
         /// <summary>
         /// Time taken to use the exit

@@ -36,7 +36,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.inputBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.actionButton = new System.Windows.Forms.Button();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -164,7 +164,7 @@
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.button1);
+            this.splitContainer4.Panel2.Controls.Add(this.actionButton);
             this.splitContainer4.Size = new System.Drawing.Size(818, 27);
             this.splitContainer4.SplitterDistance = 654;
             this.splitContainer4.TabIndex = 0;
@@ -179,22 +179,22 @@
             this.inputBox.Size = new System.Drawing.Size(654, 22);
             this.inputBox.TabIndex = 0;
             // 
-            // button1
+            // actionButton
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Action";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.actionButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.actionButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionButton.Location = new System.Drawing.Point(0, 0);
+            this.actionButton.Name = "actionButton";
+            this.actionButton.Size = new System.Drawing.Size(160, 27);
+            this.actionButton.TabIndex = 0;
+            this.actionButton.Text = "Action";
+            this.actionButton.UseVisualStyleBackColor = true;
+            this.actionButton.Click += new System.EventHandler(this.actionButton_Click);
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 24);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // splitContainer5
@@ -282,7 +282,7 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.TextBox inputBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button actionButton;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.SplitContainer splitContainer5;
