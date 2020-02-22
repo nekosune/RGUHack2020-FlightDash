@@ -11,6 +11,10 @@ namespace FlightDash
 
         public int Money { get; set; }
 
+        public void Initialize()
+        {
+            this.Money = 125;
+        }
 
     }
 }

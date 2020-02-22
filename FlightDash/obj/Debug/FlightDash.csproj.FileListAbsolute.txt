@@ -7,3 +7,12 @@ C:\Users\katsw\source\repos\FlightDash\FlightDash\obj\Debug\FlightDash.Propertie
 C:\Users\katsw\source\repos\FlightDash\FlightDash\obj\Debug\FlightDash.csproj.GenerateResource.cache
 C:\Users\katsw\source\repos\FlightDash\FlightDash\obj\Debug\FlightDash.exe
 C:\Users\katsw\source\repos\FlightDash\FlightDash\obj\Debug\FlightDash.pdb
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\bin\Debug\FlightDash.exe.config
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\bin\Debug\FlightDash.exe
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\bin\Debug\FlightDash.pdb
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\obj\Debug\FlightDash.csprojAssemblyReference.cache
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\obj\Debug\FlightDash.Form1.resources
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\obj\Debug\FlightDash.Properties.Resources.resources
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\obj\Debug\FlightDash.csproj.GenerateResource.cache
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\obj\Debug\FlightDash.exe
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDash\obj\Debug\FlightDash.pdb
