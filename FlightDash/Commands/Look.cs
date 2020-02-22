@@ -25,6 +25,20 @@ namespace FlightDash.Commands
                     $"{curState.CurrentRoom.ShortRoomDesc}{Environment.NewLine}{curState.CurrentRoom.LongRoomDesc}";
                 return true;
             }
+            else
+            {
+                if (commandArguments[0].ToLower() == "at")
+                    commandArguments = commandArguments.Skip(1).ToArray();
+                var toLook = commandArguments[0];
+                foreach (var currentRoomExit in curState.CurrentRoom.Exits)
+                {
+                    if (currentRoomExit.ExitNames.Contains(toLook.ToLower()))
+                    {
+                        output = $"{currentRoomExit.ExitDesc}{Environment.NewLine}";
+                        return true;
+                    }
+                }
+            }
 
 
             output = "";

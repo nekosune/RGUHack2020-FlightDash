@@ -23,6 +23,7 @@ namespace FlightDash
         public string LongRoomDesc { get; set; }
         
         public List<Exit> Exits { get; set; } = new List<Exit>();
+        public Exit AutoExit { get; set; }
 
     }
 }

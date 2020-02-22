@@ -9,4 +9,9 @@ FlightDash is a fun little text based adventure game replicating the twists of g
 
 Made with ♥ in 24 hours by @theaimeeknight and @nekosune (Team Michigan :us:) for the 2020 RGUHack, held on February 22nd and 23rd at Robert Gordon University, Aberdeen, United Kingdom :gb:.
 
+## Want FlightDash Pocket?
+![FlightDash Pocket](https://aimeeknight.uk/wp-content/uploads/2020/02/FlightDashPocket_landscape.png)
+Do you want to play FlightDash on your mobile or tablet? We're wanting to know if there is demand for a Pocket edition of FlightDash. If you want to say Yes and follow updates, [let us know](https://forms.gle/VHZzBACTguwQab83A)!
+
+
 FlightDash says :rainbow_flag: LGBTQ+ Rights!
