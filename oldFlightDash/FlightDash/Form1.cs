@@ -35,6 +35,11 @@ namespace FlightDash
             toolStripStatusLabel1.Text = Game.RoomTitle();
             toolStripStatusLabel2.Text = $"Time to Flight: {Game.TimeToFlight / 60:D2}:{Game.TimeToFlight % 60:D2}";
             toolStripStatusLabel3.Text = $"Money: {Game.Player?.Money ?? 0:C}";
+            listBox2.Items.Clear();
+            foreach (var currentRoomExit in Game.CurrentRoom.Exits)
+            {
+                listBox2.Items.Add(currentRoomExit);
+            }
 
         }
         private void actionButton_Click(object sender, EventArgs e)
@@ -57,6 +62,31 @@ namespace FlightDash
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
             }
+            StatusBar();
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox2_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedExit = listBox2.SelectedItem as Exit;
+            if (selectedExit == null)
+                return;
+            richTextBox1.Text += "> go " + (selectedExit.ExitNames.Length>0 ? selectedExit.ExitNames[0]: "")+Environment.NewLine;
+            listBox1.Items.Add("go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : ""));
+            listBox1.SelectedIndex = listBox1.Items.Count - 1;
+            var parsed =
+                Game.TryParseInput("go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : ""),out var output);
+            if (parsed)
+            {
+                richTextBox1.Text += output;
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            
             StatusBar();
         }
     }

@@ -40,5 +40,9 @@ namespace FlightDash
         public string LockText { get; set; }
         public int LockTime { get; set; }
 
+        public override string ToString()
+        {
+            return $"{ExitName}";
+        }
     }
 }

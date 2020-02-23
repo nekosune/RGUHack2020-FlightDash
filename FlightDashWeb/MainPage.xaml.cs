@@ -18,8 +18,21 @@ namespace FlightDashWeb
             Game.InitializeGame();
             // Enter construction logic here...
             output.Text += Game.GetRoomHeader();
+            statusScreen();
         }
 
+        private void statusScreen()
+        {
+            directionList.Items.Clear();
+            foreach (var currentRoomExit in Game.CurrentRoom.Exits)
+            {
+                directionList.Items.Add(currentRoomExit);
+            }
+        }
+        private void direction_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
         private void actionButton_Click(object sender, RoutedEventArgs e)
         {
             HandleInput();
@@ -49,6 +62,16 @@ namespace FlightDashWeb
                 output.Text += "> " + input.Text + Environment.NewLine;
                 output.Text += outputText;
             }
+
+            statusScreen();
+        }
+
+        private void directionList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedExit = directionList.SelectedItem as Exit;
+            if (selectedExit == null)
+                return;
+            input.Text = "go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : "");
         }
     }
 }

@@ -82,7 +82,7 @@ Your dashboard is a bit dirty but looking closer you notice your fuel is only a 
                 ExitDesc = "The rental car is a small, and slightly battered thing.",
                 ExitText = "You dump your suitcase into the trunk, filling the limited space before plopping yourself down in the drivers seat",
                 ExitName = "Car",
-                ExitNames = new []{"car","in","rental", "drivers side"},
+                ExitNames = new []{"car","in","rental", "drivers"},
                 ExitTime = 1,
                 ExitCost = 0
             };
@@ -102,7 +102,7 @@ Whereas the road to the left costs you $50 just to enter,but takes you direct to
                 ExitDesc = "The road to the airport looks pretty obvious from here",
                 Destination = onFirstRoad,
                 ExitCost = 0,
-                ExitNames = new []{ "to the airport" , "airport", "out", "plane", "flight"},
+                ExitNames = new []{ "airport" , "airport", "out", "plane", "flight"},
                 ExitText = "Driving out of the hotel, you  soon spot the sign to the airport",
                 ExitTime = 10
                 
@@ -158,7 +158,7 @@ Whereas the road to the left costs you $50 just to enter,but takes you direct to
 
             var tollbothLeave=new Exit(){
             Destination = airportEntrance,
-            ExitNames = new [] {""},
+            ExitNames = new [] {"leave"},
             ExitName = "Tollbooth exit",
             ExitDesc = "",
             ExitTime = 10,
@@ -169,7 +169,7 @@ Whereas the road to the left costs you $50 just to enter,but takes you direct to
             var freeRouteLeave = new Exit()
             {
                 Destination = airportEntrance,
-                ExitNames = new[] { "" },
+                ExitNames = new[] { "leave" },
                 ExitName = "Free route exit",
                 ExitDesc = "",
                 ExitTime = 25,
@@ -391,7 +391,8 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 ExitText =
                     "Stomach grumbling, you order a bagel and Orange Juice, Mishy grabs you a bagel and pours you a cup of fresh orange juice, passing it over the counter with a smile. \"$6 please\"",
                 ExitCost = 6,
-                ExitTime = 4
+                ExitTime = 4,
+                ExitNames = new []{"order","bakery","bread","bagel"}
             };
             bakery.Exits.Add(buyBakery);
 
@@ -402,7 +403,8 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 ExitText = "You go into the bakery, enjoying the ambiance provided",
                 ExitTime = 1,
                 Destination = bakery,
-                ExitCost = 0
+                ExitCost = 0,
+                ExitNames = new []{"bakery","mishy","bread"}
             };
             terminal.Exits.Add(goBakery);
 
@@ -411,7 +413,8 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 ExitName = "The Lounge",
                 ExitLocked = game => true,
                 LockText = "You wander off to the lounge, hoping you may be able to talk your way in on this economy ticket, sadly however as you try to talk the attendent into it, she is having none of it and refuses you entry.",
-                LockTime = 5
+                LockTime = 5,
+                ExitNames = new []{"lounge","gold"}
             };
             terminal.Exits.Add(loungeExit);
 
@@ -435,6 +438,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 ExitDesc = "",
                 ExitText = "You leave the Gate and soon you are on the airplane. Your seat is as cramped as usual, but it feels like a throne today",
                 Destination = EndScreen,
+                ExitNames = new []{"win"}
 
             };
             terminal.Exits.Add(gateExit);
@@ -500,5 +504,15 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
             return "";
         }
 
+        public string ChangeRoom(Exit exit)
+        {
+            string output = "";
+            output = exit.ExitText + Environment.NewLine;
+            CurrentRoom = exit.Destination;
+            TimeToFlight -= exit.ExitTime;
+            Player.Money -= exit.ExitCost;
+            output += GetRoomHeader();
+            return output;
+        }
     }
 }

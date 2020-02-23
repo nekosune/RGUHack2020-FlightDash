@@ -44,20 +44,13 @@ namespace FlightDash.Commands
                         return true;
                     }
                 }
-                output = currentRoomExit.ExitText + Environment.NewLine;
-                curState.CurrentRoom = currentRoomExit.Destination;
-                curState.TimeToFlight -= currentRoomExit.ExitTime;
-                curState.Player.Money -= currentRoomExit.ExitCost;
-                output += curState.GetRoomHeader();
+
+                output=curState.ChangeRoom(currentRoomExit);
 
                 while (curState.CurrentRoom.AutoExit != null)
                 {
                     var exit = curState.CurrentRoom.AutoExit;
-                    output += Environment.NewLine + exit.ExitText + Environment.NewLine;
-                    curState.CurrentRoom = exit.Destination;
-                    curState.TimeToFlight -= exit.ExitTime;
-                    curState.Player.Money -= exit.ExitCost;
-                    output += curState.GetRoomHeader();
+                    output += curState.ChangeRoom(exit);
                 }
 
                 return true;
