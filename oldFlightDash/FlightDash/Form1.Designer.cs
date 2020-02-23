@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.inputBox = new System.Windows.Forms.TextBox();
             this.actionButton = new System.Windows.Forms.Button();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -77,12 +77,34 @@
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 24);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.Raised;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(149, 24);
+            this.toolStripStatusLabel2.Text = "Time To Flight: 00:00";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabel3.BorderStyle = System.Windows.Forms.Border3DStyle.Raised;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(97, 24);
+            this.toolStripStatusLabel3.Text = "Money: $100";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1099, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1099, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -90,7 +112,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -100,7 +122,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer1.Size = new System.Drawing.Size(1099, 512);
+            this.splitContainer1.Size = new System.Drawing.Size(1099, 518);
             this.splitContainer1.SplitterDistance = 818;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -118,9 +140,20 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(818, 512);
-            this.splitContainer2.SplitterDistance = 367;
+            this.splitContainer2.Size = new System.Drawing.Size(818, 518);
+            this.splitContainer2.SplitterDistance = 371;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.Black;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(818, 371);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
             // splitContainer3
             // 
@@ -136,8 +169,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(818, 141);
-            this.splitContainer3.SplitterDistance = 110;
+            this.splitContainer3.Size = new System.Drawing.Size(818, 143);
+            this.splitContainer3.SplitterDistance = 111;
             this.splitContainer3.TabIndex = 0;
             // 
             // listBox1
@@ -149,7 +182,7 @@
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(818, 110);
+            this.listBox1.Size = new System.Drawing.Size(818, 111);
             this.listBox1.TabIndex = 0;
             // 
             // splitContainer4
@@ -165,7 +198,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.actionButton);
-            this.splitContainer4.Size = new System.Drawing.Size(818, 27);
+            this.splitContainer4.Size = new System.Drawing.Size(818, 28);
             this.splitContainer4.SplitterDistance = 654;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -185,17 +218,11 @@
             this.actionButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.actionButton.Location = new System.Drawing.Point(0, 0);
             this.actionButton.Name = "actionButton";
-            this.actionButton.Size = new System.Drawing.Size(160, 27);
+            this.actionButton.Size = new System.Drawing.Size(160, 28);
             this.actionButton.TabIndex = 0;
             this.actionButton.Text = "Action";
             this.actionButton.UseVisualStyleBackColor = true;
             this.actionButton.Click += new System.EventHandler(this.actionButton_Click);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 24);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // splitContainer5
             // 
@@ -203,36 +230,9 @@
             this.splitContainer5.Location = new System.Drawing.Point(0, 0);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer5.Size = new System.Drawing.Size(277, 512);
-            this.splitContainer5.SplitterDistance = 273;
+            this.splitContainer5.Size = new System.Drawing.Size(277, 518);
+            this.splitContainer5.SplitterDistance = 276;
             this.splitContainer5.TabIndex = 0;
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.toolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.Raised;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(149, 24);
-            this.toolStripStatusLabel2.Text = "Time To Flight: 00:00";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.toolStripStatusLabel3.BorderStyle = System.Windows.Forms.Border3DStyle.Raised;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(97, 24);
-            this.toolStripStatusLabel3.Text = "Money: $100";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Black;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(818, 367);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // Form1
             // 

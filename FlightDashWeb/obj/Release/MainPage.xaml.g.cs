@@ -1,4 +1,4 @@
-// <CSHTML5><XamlHash>BE992D6B35C3DD8D8FD0D3D4A463BCD5</XamlHash><PassNumber>1</PassNumber><CompilationDate>2/23/2020 1:41:16 AM</CompilationDate></CSHTML5>
+// <CSHTML5><XamlHash>7D2C7D70654C3D6C06D70456B801A8DF</XamlHash><PassNumber>2</PassNumber><CompilationDate>2/23/2020 7:17:37 AM</CompilationDate></CSHTML5>
 
 
 
@@ -36,15 +36,7 @@ protected global::Windows.UI.Xaml.Controls.ListBox pastInputList;
 protected global::Windows.UI.Xaml.Controls.TextBox input;
 protected global::Windows.UI.Xaml.Controls.Button actionButton;
 
-private global::Windows.UI.Xaml.Controls.ColumnDefinition Unused_1b68d11c5a63427984b46a61ca310c95;
-private global::Windows.UI.Xaml.Controls.RowDefinition Unused_9b2cb1ed68ab426a9004dd20ddb7d710;
-private global::Windows.UI.Xaml.Controls.TextBlock Unused_bcf50c61dc964655a47c29eb1e5c0e48;
-private global::Windows.UI.Xaml.Controls.ScrollViewer Unused_33cd36ac6e434b9589e62e8b1e4d353d;
-private global::Windows.UI.Xaml.Controls.ListBox Unused_319ed753c7d44873b70a7d16410da25d;
-private global::Windows.UI.Xaml.Controls.TextBox Unused_844f70f6f20e4cad8afb424d847955c9;
-private global::Windows.UI.Xaml.Controls.Button Unused_cdcb3a484d25471ea9ecdcc1c1c63ea1;
-private global::Windows.UI.Xaml.Controls.Grid Unused_c3031de04f384069883021a40c15a9eb;
-private global::Windows.UI.Xaml.Controls.Page Unused_12162cc1471b4692927d9086ab55d409;
+
 #pragma warning restore 169, 649, 0628
 
 
@@ -64,32 +56,130 @@ private global::Windows.UI.Xaml.Controls.Page Unused_12162cc1471b4692927d9086ab5
 
 
 
+var Grid_d36e3fae6419446582cbeda488d328a7 = new global::Windows.UI.Xaml.Controls.Grid();
+Grid_d36e3fae6419446582cbeda488d328a7.HorizontalAlignment = global::Windows.UI.Xaml.HorizontalAlignment.Stretch;
+Grid_d36e3fae6419446582cbeda488d328a7.VerticalAlignment = global::Windows.UI.Xaml.VerticalAlignment.Stretch;
+var ColumnDefinition_92bef3b3aa8a4b568c9881ed12171228 = new global::Windows.UI.Xaml.Controls.ColumnDefinition();
+ColumnDefinition_92bef3b3aa8a4b568c9881ed12171228.Width = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var ColumnDefinition_f3bb85ba3e734aa59c6094af7ba21572 = new global::Windows.UI.Xaml.Controls.ColumnDefinition();
+ColumnDefinition_f3bb85ba3e734aa59c6094af7ba21572.Width = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var ColumnDefinition_d1bbd5995d2e45fd96cbbe99dc33f287 = new global::Windows.UI.Xaml.Controls.ColumnDefinition();
+ColumnDefinition_d1bbd5995d2e45fd96cbbe99dc33f287.Width = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var ColumnDefinition_b2b93a91f66f400b87200779b40e28b1 = new global::Windows.UI.Xaml.Controls.ColumnDefinition();
+ColumnDefinition_b2b93a91f66f400b87200779b40e28b1.Width = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var ColumnDefinition_08a3eab9a4ce4253af9ffd90b558f965 = new global::Windows.UI.Xaml.Controls.ColumnDefinition();
+ColumnDefinition_08a3eab9a4ce4253af9ffd90b558f965.Width = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+Grid_d36e3fae6419446582cbeda488d328a7.ColumnDefinitions.Add(ColumnDefinition_92bef3b3aa8a4b568c9881ed12171228);
+Grid_d36e3fae6419446582cbeda488d328a7.ColumnDefinitions.Add(ColumnDefinition_f3bb85ba3e734aa59c6094af7ba21572);
+Grid_d36e3fae6419446582cbeda488d328a7.ColumnDefinitions.Add(ColumnDefinition_d1bbd5995d2e45fd96cbbe99dc33f287);
+Grid_d36e3fae6419446582cbeda488d328a7.ColumnDefinitions.Add(ColumnDefinition_b2b93a91f66f400b87200779b40e28b1);
+Grid_d36e3fae6419446582cbeda488d328a7.ColumnDefinitions.Add(ColumnDefinition_08a3eab9a4ce4253af9ffd90b558f965);
+
+var RowDefinition_3685970c683841769868be8d1773d463 = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_3685970c683841769868be8d1773d463.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_911d7d80044a4149afd5e6890ce198b8 = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_911d7d80044a4149afd5e6890ce198b8.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_5868e85b35e94cd29b6896c467e6f864 = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_5868e85b35e94cd29b6896c467e6f864.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_3f2b3756f2b24ed08cea9a7f0addd2ec = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_3f2b3756f2b24ed08cea9a7f0addd2ec.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_f040838fd2184ff0a6b786fc644013cd = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_f040838fd2184ff0a6b786fc644013cd.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_3027ef4f131f4043b82de33838e03a27 = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_3027ef4f131f4043b82de33838e03a27.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_01ade81e324d4d84b5d439c2fe50a3f3 = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_01ade81e324d4d84b5d439c2fe50a3f3.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_acb794fc1d334facaeb449a82ad1a7ec = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_acb794fc1d334facaeb449a82ad1a7ec.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_52f6ebcdaf254adbb2f0154c2b8f9e43 = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_52f6ebcdaf254adbb2f0154c2b8f9e43.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+var RowDefinition_c6731da2aa954b68a772eb68e8d3f08d = new global::Windows.UI.Xaml.Controls.RowDefinition();
+RowDefinition_c6731da2aa954b68a772eb68e8d3f08d.Height = new global::Windows.UI.Xaml.GridLength(1.0, global::Windows.UI.Xaml.GridUnitType.Star);
+
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_3685970c683841769868be8d1773d463);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_911d7d80044a4149afd5e6890ce198b8);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_5868e85b35e94cd29b6896c467e6f864);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_3f2b3756f2b24ed08cea9a7f0addd2ec);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_f040838fd2184ff0a6b786fc644013cd);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_3027ef4f131f4043b82de33838e03a27);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_01ade81e324d4d84b5d439c2fe50a3f3);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_acb794fc1d334facaeb449a82ad1a7ec);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_52f6ebcdaf254adbb2f0154c2b8f9e43);
+Grid_d36e3fae6419446582cbeda488d328a7.RowDefinitions.Add(RowDefinition_c6731da2aa954b68a772eb68e8d3f08d);
+
+var ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09 = new global::Windows.UI.Xaml.Controls.ScrollViewer();
+this.RegisterName("outputScroll", ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09);
+ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09.Name = "outputScroll";
+global::Windows.UI.Xaml.Controls.Grid.SetColumn(ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09,0);
+global::Windows.UI.Xaml.Controls.Grid.SetColumnSpan(ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09,4);
+global::Windows.UI.Xaml.Controls.Grid.SetRowSpan(ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09,7);
+ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09.Background = new global::Windows.UI.Xaml.Media.SolidColorBrush(new global::Windows.UI.Color() { A = (byte)255, R = (byte)0, G = (byte)0, B = (byte)0 });
+var TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895 = new global::Windows.UI.Xaml.Controls.TextBlock();
+TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895.Text = @"";
+this.RegisterName("output", TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895);
+TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895.Name = "output";
+TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895.Background = new global::Windows.UI.Xaml.Media.SolidColorBrush(new global::Windows.UI.Color() { A = (byte)255, R = (byte)0, G = (byte)0, B = (byte)0 });
+TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895.Foreground = new global::Windows.UI.Xaml.Media.SolidColorBrush(new global::Windows.UI.Color() { A = (byte)255, R = (byte)255, G = (byte)255, B = (byte)255 });
+TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895.TextWrapping = global::Windows.UI.Xaml.TextWrapping.Wrap;
+
+ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09.Content = TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895;
+
+
+var ListBox_627bf3b2c6234b1397e8c2070621f85c = new global::Windows.UI.Xaml.Controls.ListBox();
+this.RegisterName("pastInputList", ListBox_627bf3b2c6234b1397e8c2070621f85c);
+ListBox_627bf3b2c6234b1397e8c2070621f85c.Name = "pastInputList";
+global::Windows.UI.Xaml.Controls.Grid.SetColumn(ListBox_627bf3b2c6234b1397e8c2070621f85c,0);
+global::Windows.UI.Xaml.Controls.Grid.SetColumnSpan(ListBox_627bf3b2c6234b1397e8c2070621f85c,4);
+global::Windows.UI.Xaml.Controls.Grid.SetRow(ListBox_627bf3b2c6234b1397e8c2070621f85c,7);
+global::Windows.UI.Xaml.Controls.Grid.SetRowSpan(ListBox_627bf3b2c6234b1397e8c2070621f85c,2);
+
+var TextBox_b2b6ce062ac24fdcb80435e2f9fef649 = new global::Windows.UI.Xaml.Controls.TextBox();
+this.RegisterName("input", TextBox_b2b6ce062ac24fdcb80435e2f9fef649);
+TextBox_b2b6ce062ac24fdcb80435e2f9fef649.Name = "input";
+TextBox_b2b6ce062ac24fdcb80435e2f9fef649.Text = @"";
+global::Windows.UI.Xaml.Controls.Grid.SetColumn(TextBox_b2b6ce062ac24fdcb80435e2f9fef649,0);
+global::Windows.UI.Xaml.Controls.Grid.SetColumnSpan(TextBox_b2b6ce062ac24fdcb80435e2f9fef649,3);
+global::Windows.UI.Xaml.Controls.Grid.SetRow(TextBox_b2b6ce062ac24fdcb80435e2f9fef649,9);
+TextBox_b2b6ce062ac24fdcb80435e2f9fef649.KeyDown += input_KeyDown;
+
+var Button_b45d301a36824ef89e86864bb2f1a697 = new global::Windows.UI.Xaml.Controls.Button();
+this.RegisterName("actionButton", Button_b45d301a36824ef89e86864bb2f1a697);
+Button_b45d301a36824ef89e86864bb2f1a697.Name = "actionButton";
+Button_b45d301a36824ef89e86864bb2f1a697.Content = @"Action";
+global::Windows.UI.Xaml.Controls.Grid.SetColumn(Button_b45d301a36824ef89e86864bb2f1a697,3);
+global::Windows.UI.Xaml.Controls.Grid.SetColumnSpan(Button_b45d301a36824ef89e86864bb2f1a697,1);
+global::Windows.UI.Xaml.Controls.Grid.SetRow(Button_b45d301a36824ef89e86864bb2f1a697,9);
+Button_b45d301a36824ef89e86864bb2f1a697.Click += actionButton_Click;
+
+Grid_d36e3fae6419446582cbeda488d328a7.Children.Add(ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09);
+Grid_d36e3fae6419446582cbeda488d328a7.Children.Add(ListBox_627bf3b2c6234b1397e8c2070621f85c);
+Grid_d36e3fae6419446582cbeda488d328a7.Children.Add(TextBox_b2b6ce062ac24fdcb80435e2f9fef649);
+Grid_d36e3fae6419446582cbeda488d328a7.Children.Add(Button_b45d301a36824ef89e86864bb2f1a697);
+
+
+this.Content = Grid_d36e3fae6419446582cbeda488d328a7;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+output = TextBlock_3ad4c8fd8f364f8c9a5f723b001ff895;
+outputScroll = ScrollViewer_6d865bc1e93545269cfa5b7bdea4ac09;
+pastInputList = ListBox_627bf3b2c6234b1397e8c2070621f85c;
+input = TextBox_b2b6ce062ac24fdcb80435e2f9fef649;
+actionButton = Button_b45d301a36824ef89e86864bb2f1a697;
 
 
     

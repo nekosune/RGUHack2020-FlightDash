@@ -11,3 +11,16 @@ C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Release\FlightDashWe
 C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Release\FlightDashWeb.dll
 C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Release\FlightDashWeb.pdb
 C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Release\FlightDashWeb.csprojAssemblyReference.cache
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\FlightDashWeb.dll
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\FlightDashWeb.pdb
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\Bridge.dll
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\CSHTML5.dll
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\CSHTML5.Stubs.dll
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\Bridge.xml
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\CSHTML5.pdb
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\bin\Release\CSHTML5.xml
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\obj\Release\FlightDashWeb.csprojAssemblyReference.cache
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\obj\Release\FlightDashWeb.g.resources
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\obj\Release\FlightDashWeb.csproj.CopyComplete
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\obj\Release\FlightDashWeb.dll
+C:\Users\katsw\source\repos\RGUHack2020-FlightDash\FlightDashWeb\obj\Release\FlightDashWeb.pdb

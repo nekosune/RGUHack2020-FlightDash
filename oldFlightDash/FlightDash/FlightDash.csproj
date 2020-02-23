@@ -46,9 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Belongings.cs" />
     <Compile Include="Commands\CheckIn.cs" />
     <Compile Include="Commands\Go.cs" />
     <Compile Include="Commands\Look.cs" />
+    <Compile Include="Commands\SecurityCommand.cs" />
+    <Compile Include="EndScreenRoom.cs" />
     <Compile Include="Exit.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

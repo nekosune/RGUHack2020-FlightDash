@@ -45,9 +45,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Belongings.cs" />
     <Compile Include="Commands\CheckIn.cs" />
     <Compile Include="Commands\Go.cs" />
     <Compile Include="Commands\Look.cs" />
+    <Compile Include="Commands\SecurityCommand.cs" />
+    <Compile Include="EndScreenRoom.cs" />
     <Compile Include="Exit.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="ICommand.cs" />

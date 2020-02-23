@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace FlightDash
         public bool GameOver { get; set; }
         
         public bool CheckedIn { get; set; }
+
+        public Belongings CurrentBelongings { get; set; }
         public void InitializeGame()
         {
             
@@ -30,8 +33,10 @@ namespace FlightDash
             Commands.Add(new Look());
             Commands.Add(new Go());
             Commands.Add(new CheckIn());
+            Commands.Add(new SecurityCommand());
             CheckedIn = false;
             GameOver = false;
+            CurrentBelongings = Belongings.All;
         }
 
         private void MakeRooms()
@@ -277,8 +282,163 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
 
             var preCheckExit=new Exit()
             {
+                ExitName = "PreCheck",
+                Destination = preCheck,
+                ExitDesc = "The PreCheck Security queue would be quicker, but it will cost you. It looks like theres only one other passenger heading for it",
+                ExitText = "You pay the $85 fee from your budget, and the TSA Officer waves you to the PreCheck Security Zone",
+                ExitCost = 85,
+                ExitTime = 3,
+                ExitNames = new[] { "precheck", "short", "pay" }
+            };
+            tsaEntrance.Exits.Add(preCheckExit);
+
+            var generalSecurity = new Room()
+            {
+                RoomName = "General Security",
+                ShortRoomDesc = "Eventually you get to the security desk and a TSA Officer gives you two trays and tells you to 'empty pockets' 'remove belt' 'remove shoes' and 'place backpack' in one tray, and 'remove electronics' into another tray.",
+                LongRoomDesc = "You jostle your way forward to a table, so that you can get ready to be cleared through security"
+            };
+
+            var generalExit=new Exit()
+            {
+                ExitName= "General Security",
+                Destination = generalSecurity,
+                ExitDesc = "There's a long queue for the General Security, everyone is taking their shoes and belts off and taking the electronics out of their bags",
+                ExitText = "You decide to save your cash, and join the horde of travellers making their way to the General Security zone",
+                ExitTime = 15,
+                ExitNames = new []{"free","general"}
+            };
+            tsaEntrance.Exits.Add(generalExit);
+
+            var terminal=new Room()
+            {
+                RoomName = "Terminal",
+                ShortRoomDesc = "The departure terminal beyond TSA is bustling with activity, people, and smells of all shapes and sizes",
+                LongRoomDesc = "Here and there food shops are dotted around, ensuring you are never too far away from one. "+Environment.NewLine+
+                               "The Bakery and the Mexican place look especially interesting. The sign on the ceiling shows Lounge to the right, and your gate number a tiny bit to the left"
+            };
+            var preCheckLeave = new Exit() {
+                ExitName = "Finish security",
+                Destination = terminal,
+                ExitNames = new []{"finish","out"},
+                ExitDesc = "The terminal, with the shops, food stalls, and waiting areas, are laid out before you",
+                ExitText = "You thank the TSA Officer as you leave and head into the Airport Departures Terminal",
+                ExitCost = 0,
+                ExitTime = 1
+            };
+            preCheck.Exits.Add(preCheckLeave);
+
+            var generalExitLeave=new Exit()
+            {
+                ExitName = "Finish security",
+                ExitLocked = game => game.CurrentBelongings!=Belongings.None,
+                LockText = "The TSA Officer grunts at you and stares you down. \"Empty your pockets, take your shoes off, take your belt off, empty your electronics and place your backpack into the tray, BEFORE going through security!",
+                LockTime = 6,
+                Destination = terminal,
+                ExitDesc = "The terminal, with the shops, food stalls, and waiting areas, are laid out before you",
+                ExitText = "You thank the TSA Officer as you leave and head into the Airport Departures Terminal",
+                ExitTime = 6,
+                ExitCost = 0,
+                ExitNames = new []{"finish","out"}
 
             };
+            generalSecurity.Exits.Add(generalExitLeave);
+
+            var mexican = new Room()
+            {
+                RoomName = "Mexican food",
+                ShortRoomDesc = "You go towards the mexican food stall as a worker looks up and smiles at you. On the counter is a sign that reads \"Developers' Favourite: Breakfast Burrito $10\", behind the worker is a soda fountain",
+                LongRoomDesc = "You notice a holder at the end of the counter, containing disposable cutlery"
+            };
+
+            var buyMexican = new Exit()
+            {
+                ExitName = "Buy Burrito",
+                ExitNames = new []{"buy","burrito"},
+                Destination = terminal,
+                ExitDesc = "",
+                ExitText = "Stomach grumbling, you order the Breakfast Burrito and a soa, the worker goes and makes one for you, returning after a few minutes, she passes you a foil-wrapped gift, and a cup of Strawberry flavored Soda. \"$13 please\"",
+                ExitCost = 13,
+                ExitTime = 5
+            };
+            mexican.Exits.Add(buyMexican);
+
+            var goMexican=new Exit()
+            {
+                ExitName = "Visit Mexican Store",
+                ExitNames = new []{"mexican","burrito"},
+                Destination = mexican,
+                ExitCost = 0,
+                ExitDesc = "The Stall is done up in stereotypical mexican styles",
+                ExitText = "You decide to go look over what kind of burritos the mexican place sells.",
+                ExitTime = 1
+            };
+            terminal.Exits.Append(goMexican);
+
+            var bakery = new Room()
+            {
+                RoomName = "Bakery",
+                ShortRoomDesc = "The small bakery catches your eye, and you enter, the smell of warm bread enticing you.",
+                LongRoomDesc = "The sole staff-member welcomes you. You can see her nametag reads 'Mishy - Head Baker'",
+
+            };
+
+            var buyBakery = new Exit()
+            {
+                ExitName = "Order food",
+                ExitDesc = "",
+                Destination = terminal,
+                ExitText =
+                    "Stomach grumbling, you order a bagel and Orange Juice, Mishy grabs you a bagel and pours you a cup of fresh orange juice, passing it over the counter with a smile. \"$6 please\"",
+                ExitCost = 6,
+                ExitTime = 4
+            };
+            bakery.Exits.Add(buyBakery);
+
+            var goBakery = new Exit()
+            {
+                ExitName = "Visit Bakery",
+                ExitDesc = "The Bakery looks warm, and inviting, with a soft scent of fresh bread wafting from it",
+                ExitText = "You go into the bakery, enjoying the ambiance provided",
+                ExitTime = 1,
+                Destination = bakery,
+                ExitCost = 0
+            };
+            terminal.Exits.Add(goBakery);
+
+            var loungeExit = new Exit()
+            {
+                ExitName = "The Lounge",
+                ExitLocked = game => true,
+                LockText = "You wander off to the lounge, hoping you may be able to talk your way in on this economy ticket, sadly however as you try to talk the attendent into it, she is having none of it and refuses you entry.",
+                LockTime = 5
+            };
+            terminal.Exits.Add(loungeExit);
+
+            var gate = new Room()
+            {
+                RoomName = "Gate 42",
+                ShortRoomDesc =
+                    "Gate 43 looks like pretty much every other gate, but a quick check of your boarding pass shows this one is yours",
+                LongRoomDesc =
+                    "The line seems to be quite short, seems not many people want to go the same place as you today",
+
+            };
+
+            var EndScreen = new EndScreenRoom(this);
+            {
+                // fill this in
+            };
+            var gateExit=new Exit()
+            {
+                ExitName = "In the Airplane",
+                ExitDesc = "",
+                ExitText = "You leave the Gate and soon you are on the airplane. Your seat is as cramped as usual, but it feels like a throne today",
+                Destination = EndScreen,
+
+            };
+            terminal.Exits.Add(gateExit);
+            gate.AutoExit = gateExit;
 
             CurrentRoom = hotelRoom;
 
@@ -292,8 +452,8 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
 
         public string GetRoomHeader()
         {
-            StringBuilder builder=new StringBuilder();
-            string roomName = CurrentRoom?.RoomName ?? "";
+            var builder=new StringBuilder();
+            var roomName = CurrentRoom?.RoomName ?? "";
             builder.AppendLine(roomName);
             builder.AppendLine("-------------------------------------");
             builder.AppendLine($"Time to Flight: {TimeToFlight / 60:D2}:{TimeToFlight % 60:D2}");

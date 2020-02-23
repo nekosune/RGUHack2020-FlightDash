@@ -27,7 +27,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <ScrollViewer x:Name="outputScroll" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="7" Background="Black">
-            <TextBlock Text="" x:Name="output"  Background="Black" Foreground="White"/>
+            <TextBlock Text="" x:Name="output"  Background="Black" Foreground="White" TextWrapping="Wrap"/>
         </ScrollViewer>
         <ListBox x:Name="pastInputList" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="7" Grid.RowSpan="2"  />
         <TextBox x:Name="input" Text="" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" KeyDown="input_KeyDown" />
