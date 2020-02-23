@@ -40,6 +40,7 @@ namespace FlightDash
             {
                 listBox2.Items.Add(currentRoomExit);
             }
+            listBox2.Items.AddRange(Game.GetSpecialItems());
 
         }
         private void actionButton_Click(object sender, EventArgs e)
@@ -72,21 +73,36 @@ namespace FlightDash
 
         private void listBox2_DoubleClick(object sender, EventArgs e)
         {
-            var selectedExit = listBox2.SelectedItem as Exit;
-            if (selectedExit == null)
-                return;
-            richTextBox1.Text += "> go " + (selectedExit.ExitNames.Length>0 ? selectedExit.ExitNames[0]: "")+Environment.NewLine;
-            listBox1.Items.Add("go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : ""));
-            listBox1.SelectedIndex = listBox1.Items.Count - 1;
-            var parsed =
-                Game.TryParseInput("go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : ""),out var output);
-            if (parsed)
+            if (listBox2.SelectedItem != null && listBox2.SelectedItem is Exit selectedExit)
             {
-                richTextBox1.Text += output;
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                richTextBox1.Text += "> go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : "") +
+                                     Environment.NewLine;
+                listBox1.Items.Add("go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : ""));
+                listBox1.SelectedIndex = listBox1.Items.Count - 1;
+                var parsed =
+                    Game.TryParseInput("go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : ""),
+                        out var output);
+                if (parsed)
+                {
+                    richTextBox1.Text += output;
+                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                    richTextBox1.ScrollToCaret();
+                }
             }
-            
+            else if (listBox2.SelectedItem is string selectedCommand)
+            {
+                richTextBox1.Text += $"> {selectedCommand}" + Environment.NewLine;
+                listBox1.Items.Add(selectedCommand);
+                var parsed =
+                    Game.TryParseInput(selectedCommand, out var output);
+                if (parsed)
+                {
+                    richTextBox1.Text += output;
+                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                    richTextBox1.ScrollToCaret();
+                }
+            }
+
             StatusBar();
         }
     }

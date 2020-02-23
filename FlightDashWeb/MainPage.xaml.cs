@@ -28,11 +28,19 @@ namespace FlightDashWeb
             {
                 directionList.Items.Add(currentRoomExit);
             }
-        }
-        private void direction_Click(object sender, RoutedEventArgs e)
-        {
+
+            foreach (var specialItem in Game.GetSpecialItems())
+            {
+                directionList.Items.Add(specialItem);
+            }
             
         }
+
+        private void direction_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void actionButton_Click(object sender, RoutedEventArgs e)
         {
             HandleInput();
@@ -40,7 +48,7 @@ namespace FlightDashWeb
 
         private void input_KeyDown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
         {
-            if(e.Key==VirtualKey.Enter)
+            if (e.Key == VirtualKey.Enter)
             {
                 HandleInput();
             }
@@ -56,11 +64,13 @@ namespace FlightDashWeb
                 output.Text += "> " + input.Text + Environment.NewLine;
                 output.Text += outputText;
                 input.Text = "";
+                outputScroll.ScrollToVerticalOffset(outputScroll.ActualHeight);
             }
             else
             {
                 output.Text += "> " + input.Text + Environment.NewLine;
                 output.Text += outputText;
+                outputScroll.ScrollToVerticalOffset(outputScroll.ActualHeight);
             }
 
             statusScreen();
@@ -68,10 +78,20 @@ namespace FlightDashWeb
 
         private void directionList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedExit = directionList.SelectedItem as Exit;
-            if (selectedExit == null)
-                return;
-            input.Text = "go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : "");
+            if (directionList.SelectedItem != null && directionList.SelectedItem is Exit)
+            {
+                var selectedExit = directionList.SelectedItem as Exit;
+                if (selectedExit == null)
+                    return;
+                input.Text = "go " + (selectedExit.ExitNames.Length > 0 ? selectedExit.ExitNames[0] : "");
+            }
+            else if (directionList.SelectedItem != null && directionList.SelectedItem is string)
+            {
+                var selectedText = directionList.SelectedItem as string;
+                if (selectedText == null)
+                    return;
+                input.Text = selectedText;
+            }
         }
     }
 }

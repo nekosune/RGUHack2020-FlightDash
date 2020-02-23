@@ -33,7 +33,7 @@ namespace FlightDashWeb
             Commands.Add(new SecurityCommand());
             CheckedIn = false;
             GameOver = false;
-            CurrentBelongings = Belongings.All;
+            CurrentBelongings = Belongings.Electronics | Belongings.Pockets | Belongings.Backpack | Belongings.Belt | Belongings.Shoes;
         }
 
         private void MakeRooms()
@@ -60,7 +60,7 @@ namespace FlightDashWeb
                     "Leaving the hotel you hear it lock behind you, dropping your keys off at reception you head into the carpark to pick up your rental.",
                 ExitName = "Outside",
                 ExitNames = new[] { "outside", "door", "exit", "out" },
-                ExitTime = 5,
+                ExitTime = 3,
                 ExitCost = 0
             };
             hotelRoom.Exits.Add(hotelExit);
@@ -229,7 +229,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 Destination = tsaEntrance,
                 ExitCost = 0,
                 ExitName = "TSA Entrance",
-                ExitNames = new[] { "TSA", "right", "security" },
+                ExitNames = new[] { "tsa", "right", "security" },
                 ExitDesc = "The Entrance to the TSA area is large, but guarded by a couple men checking boarding passes",
                 ExitText = "You get in line, showing your boarding pass to the guard",
                 ExitTime = 1
@@ -252,7 +252,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 ExitDesc = "The line to the check-in desk is quite long, but not unwieldy",
                 ExitText = "Waiting in the line, it moves at a moderate pace, and soon enough you are at the check-in desk",
                 ExitCost = 0,
-                ExitTime = 5
+                ExitTime = 4
             };
 
             var leaveCheckin = new Exit()
@@ -305,7 +305,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 Destination = generalSecurity,
                 ExitDesc = "There's a long queue for the General Security, everyone is taking their shoes and belts off and taking the electronics out of their bags",
                 ExitText = "You decide to save your cash, and join the horde of travellers making their way to the General Security zone",
-                ExitTime = 15,
+                ExitTime = 8,
                 ExitNames = new[] { "free", "general" }
             };
             tsaEntrance.Exits.Add(generalExit);
@@ -429,9 +429,10 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
 
             };
 
-            var EndScreen = new EndScreenRoom(this);
+            var EndScreen = new EndScreenRoom(this)
             {
                 // fill this in
+                RoomName = "End Screen"
             };
             var gateExit = new Exit()
             {
@@ -457,15 +458,45 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
 
         public string GetRoomHeader()
         {
-            var builder = new StringBuilder();
-            var roomName = CurrentRoom?.RoomName ?? "";
-            builder.AppendLine(roomName);
-            builder.AppendLine("-------------------------------------");
-            builder.AppendLine($"Time to Flight: {TimeToFlight / 60:D2}:{TimeToFlight % 60:D2}");
-            builder.AppendLine($"Money: {Player?.Money ?? 0:C}");
-            builder.AppendLine(CurrentRoom?.ShortRoomDesc ?? "");
-            return builder.ToString();
+            if (CurrentRoom is EndScreenRoom)
+            {
+                return $"Congratulations, you won! You had {TimeToFlight / 60:D2}:{TimeToFlight % 60:D2} remaining, and {Player?.Money ?? 0:C} remaining";
+            }
+            else
+            {
+                var builder = new StringBuilder();
+                var roomName = CurrentRoom?.RoomName ?? "";
+                builder.AppendLine(roomName);
+                builder.AppendLine("-------------------------------------");
+                builder.AppendLine($"Time to Flight: {TimeToFlight / 60:D2}:{TimeToFlight % 60:D2}");
+                builder.AppendLine($"Money: {Player?.Money ?? 0:C}");
+                builder.AppendLine(CurrentRoom?.ShortRoomDesc ?? "");
+                return builder.ToString();
+            }
+        }
 
+        public string[] GetSpecialItems()
+        {
+            var items = new List<string>();
+            if (CurrentRoom.RoomName.ToLower() == "the check-in desk")
+            {
+                items.Add("check in");
+            }
+            else if (CurrentRoom.RoomName.ToLower() == "general security")
+            {
+
+                if (CurrentBelongings.HasFlag(Belongings.Pockets))
+                    items.Add("empty pockets");
+                if (CurrentBelongings.HasFlag(Belongings.Belt))
+                    items.Add("remove belt");
+                if (CurrentBelongings.HasFlag(Belongings.Shoes))
+                    items.Add("remove shoes");
+                if (CurrentBelongings.HasFlag(Belongings.Backpack))
+                    items.Add("place backpack");
+                if (CurrentBelongings.HasFlag(Belongings.Electronics))
+                    items.Add("remove electronics");
+            }
+            return items.ToArray();
         }
         public bool TryParseInput(string input, out string outputText)
         {
