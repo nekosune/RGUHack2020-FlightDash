@@ -1,4 +1,4 @@
-// <CSHTML5><XamlHash>9743B903219DCE3F0533B955583E3B4C</XamlHash><PassNumber>2</PassNumber><CompilationDate>2/23/2020 1:18:27 AM</CompilationDate></CSHTML5>
+// <CSHTML5><XamlHash>9743B903219DCE3F0533B955583E3B4C</XamlHash><PassNumber>1</PassNumber><CompilationDate>2/23/2020 1:41:16 AM</CompilationDate></CSHTML5>
 
 
 
@@ -32,7 +32,8 @@ partial class App : global::Windows.UI.Xaml.Application
 #pragma warning disable 169, 649, 0628 // Prevents warning CS0169 ('field ... is never used'), CS0649 ('field ... is never assigned to, and will always have its default value null'), and CS0628 ('member : new protected member declared in sealed class')
 
 
-
+private global::Windows.UI.Xaml.ResourceDictionary Unused_20ad0919fbfc4e2d93e9450d59331483;
+private global::Windows.UI.Xaml.Application Unused_40d22c065dbc4650b51c801d1ed44dae;
 #pragma warning restore 169, 649, 0628
 
 
@@ -57,10 +58,7 @@ global::CSHTML5.Internal.StartupAssemblyInfo.OutputLibrariesPath = @"app-cshtml5
 global::CSHTML5.Internal.StartupAssemblyInfo.OutputResourcesPath = @"app-cshtml5\res\";
 
 
-var ResourceDictionary_8bbc84a20647496f9f90df5ebb9a9956 = new global::Windows.UI.Xaml.ResourceDictionary();
-this.Resources = ResourceDictionary_8bbc84a20647496f9f90df5ebb9a9956;
 
-this.Resources = ResourceDictionary_8bbc84a20647496f9f90df5ebb9a9956;
 
 
 
