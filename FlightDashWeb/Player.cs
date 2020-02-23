@@ -10,7 +10,7 @@ namespace FlightDashWeb
     {
 
         public decimal Money { get; set; }
-
+        public double ScoreModifiers { get; set; }
         public void Initialize()
         {
             this.Money = 125;

@@ -45,7 +45,7 @@ namespace FlightDash.Commands
 
             curState.CheckedIn = true;
 
-            output = "";
+            output = "You Check in at the desk, putting your carefully preweighed luggage on the scale, and collect your boarding pass.";
 
             var exit = curState.CurrentRoom.Exits[0];
             output += Environment.NewLine + exit.ExitText + Environment.NewLine;

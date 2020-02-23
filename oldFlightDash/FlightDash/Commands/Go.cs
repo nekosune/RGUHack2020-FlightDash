@@ -40,6 +40,7 @@ namespace FlightDash.Commands
                     {
                         output = currentRoomExit.LockText;
                         curState.TimeToFlight -= currentRoomExit.LockTime;
+                        curState.Player.ScoreModifiers += currentRoomExit.LockScore;
                         output += Environment.NewLine + curState.GetRoomHeader();
                         return true;
                     }

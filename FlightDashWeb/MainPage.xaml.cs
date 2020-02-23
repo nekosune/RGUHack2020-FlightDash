@@ -64,13 +64,13 @@ namespace FlightDashWeb
                 output.Text += "> " + input.Text + Environment.NewLine;
                 output.Text += outputText;
                 input.Text = "";
-                outputScroll.ScrollToVerticalOffset(outputScroll.ActualHeight);
+                outputScroll.ScrollToVerticalOffset(999999999999);
             }
             else
             {
                 output.Text += "> " + input.Text + Environment.NewLine;
                 output.Text += outputText;
-                outputScroll.ScrollToVerticalOffset(outputScroll.ActualHeight);
+                outputScroll.ScrollToVerticalOffset(999999999999);
             }
 
             statusScreen();

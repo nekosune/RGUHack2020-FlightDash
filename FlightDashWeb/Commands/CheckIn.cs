@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightDashWeb.Commands
 {
-    public class CheckIn:ICommand
+    public class CheckIn : ICommand
     {
         public string GetCommandName()
         {
@@ -15,7 +15,7 @@ namespace FlightDashWeb.Commands
 
         public string[] GetCommandAliases()
         {
-            return new[] {"check"};
+            return new[] { "check" };
         }
 
         public string GetCommandHelp()
@@ -27,7 +27,7 @@ namespace FlightDashWeb.Commands
         {
             if (commandArguments.Length != 1)
             {
-                output = "I have nothing to check."+Environment.NewLine;
+                output = "I have nothing to check." + Environment.NewLine;
                 return false;
             }
 
@@ -45,7 +45,7 @@ namespace FlightDashWeb.Commands
 
             curState.CheckedIn = true;
 
-            output = "";
+            output = "You Check in at the desk, putting your carefully preweighed luggage on the scale, and collect your boarding pass.";
 
             var exit = curState.CurrentRoom.Exits[0];
             output += Environment.NewLine + exit.ExitText + Environment.NewLine;

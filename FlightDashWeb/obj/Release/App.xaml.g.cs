@@ -1,4 +1,4 @@
-// <CSHTML5><XamlHash>9743B903219DCE3F0533B955583E3B4C</XamlHash><PassNumber>2</PassNumber><CompilationDate>2/23/2020 11:16:47 AM</CompilationDate></CSHTML5>
+// <CSHTML5><XamlHash>9743B903219DCE3F0533B955583E3B4C</XamlHash><PassNumber>2</PassNumber><CompilationDate>2/23/2020 12:13:47 PM</CompilationDate></CSHTML5>
 
 
 
@@ -57,10 +57,10 @@ global::CSHTML5.Internal.StartupAssemblyInfo.OutputLibrariesPath = @"app-cshtml5
 global::CSHTML5.Internal.StartupAssemblyInfo.OutputResourcesPath = @"app-cshtml5\res\";
 
 
-var ResourceDictionary_399c753b2f3d4c6b819145f5b8e0a6b8 = new global::Windows.UI.Xaml.ResourceDictionary();
-this.Resources = ResourceDictionary_399c753b2f3d4c6b819145f5b8e0a6b8;
+var ResourceDictionary_452ecb77c46b4be1b87b8b990491b579 = new global::Windows.UI.Xaml.ResourceDictionary();
+this.Resources = ResourceDictionary_452ecb77c46b4be1b87b8b990491b579;
 
-this.Resources = ResourceDictionary_399c753b2f3d4c6b819145f5b8e0a6b8;
+this.Resources = ResourceDictionary_452ecb77c46b4be1b87b8b990491b579;
 
 
 

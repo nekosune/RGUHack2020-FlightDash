@@ -166,13 +166,14 @@ Whereas the road to the left costs you $50 just to enter,but takes you direct to
             ExitCost = 5
             };
 
+            Random rand=new Random();
             var freeRouteLeave = new Exit()
             {
                 Destination = airportEntrance,
                 ExitNames = new[] { "leave" },
                 ExitName = "Free route exit",
                 ExitDesc = "",
-                ExitTime = 25,
+                ExitTime = rand.Next(10)>5?25:35,
                 ExitText = "You leave the route and find yourself immediately by the airport rental drop off, parking your car and grabbing your luggage you walk the extremely short distance to departures",
                 ExitCost = 0
             };
@@ -333,6 +334,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 ExitName = "Finish security",
                 ExitLocked = game => game.CurrentBelongings!=Belongings.None,
                 LockText = "The TSA Officer grunts at you and stares you down. \"Empty your pockets, take your shoes off, take your belt off, empty your electronics and place your backpack into the tray, BEFORE going through security!",
+                LockScore = -1,
                 LockTime = 6,
                 Destination = terminal,
                 ExitDesc = "The terminal, with the shops, food stalls, and waiting areas, are laid out before you",
@@ -358,6 +360,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 Destination = terminal,
                 ExitDesc = "",
                 ExitText = "Stomach grumbling, you order the Breakfast Burrito and a soa, the worker goes and makes one for you, returning after a few minutes, she passes you a foil-wrapped gift, and a cup of Strawberry flavored Soda. \"$13 please\"",
+                ScoreModify = -1,
                 ExitCost = 13,
                 ExitTime = 5
             };
@@ -389,9 +392,10 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
                 ExitDesc = "",
                 Destination = terminal,
                 ExitText =
-                    "Stomach grumbling, you order a bagel and Orange Juice, Mishy grabs you a bagel and pours you a cup of fresh orange juice, passing it over the counter with a smile. \"$6 please\"",
+                    "Stomach grumbling, you order a bagel and Orange Juice, Mishy grabs you a bagel and pours you a cup of fresh orange juice, passing it over the counter with a smile. \"$6 please\"\r\n",
                 ExitCost = 6,
                 ExitTime = 4,
+                ScoreModify = 51,
                 ExitNames = new []{"order","bakery","bread","bagel"}
             };
             bakery.Exits.Add(buyBakery);
@@ -459,7 +463,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
         {
             if (CurrentRoom is EndScreenRoom)
             {
-                return $"Congratulations, you won! You had {TimeToFlight / 60:D2}:{TimeToFlight % 60:D2} remaining, and {Player?.Money ?? 0:C} remaining";
+                return $"Congratulations, you won! You had {TimeToFlight / 60:D2}:{TimeToFlight % 60:D2} remaining, and {Player?.Money ?? 0:C} remaining\r\n That ,alongside bonus and penalty scores, gives you a total score of "+((TimeToFlight/60)*100) +((Player.Money/125) * 100) + Player.ScoreModifiers ;
             }
             else
             {
@@ -542,6 +546,7 @@ Do you choose to buy TSA PreCheck, or do you use the general queue?
             CurrentRoom = exit.Destination;
             TimeToFlight -= exit.ExitTime;
             Player.Money -= exit.ExitCost;
+            Player.ScoreModifiers += exit.ScoreModify;
             output += GetRoomHeader();
             return output;
         }
