@@ -1,0 +1,13 @@
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\FlightDashWeb.dll
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\FlightDashWeb.pdb
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\Bridge.dll
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\CSHTML5.dll
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\CSHTML5.Stubs.dll
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\Bridge.xml
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\CSHTML5.pdb
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\bin\Debug\CSHTML5.xml
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Debug\FlightDashWeb.csprojAssemblyReference.cache
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Debug\FlightDashWeb.g.resources
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Debug\FlightDashWeb.csproj.CopyComplete
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Debug\FlightDashWeb.dll
+C:\Users\katsw\source\repos\FlightDashWeb\FlightDashWeb\obj\Debug\FlightDashWeb.pdb
